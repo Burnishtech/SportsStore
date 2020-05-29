@@ -1,0 +1,28 @@
+﻿@using SportsStore.Domain.Entities
+@model SportsStore.WebUI.Models.ProductlistViewModel
+@{ 
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@*@foreach(var p in Model.Products)
+{
+
+    <div>
+        <h3>@p.Name</h3>@p.Description
+        <h4>@p.Price.ToString()</h4>
+
+    </div>
+}*@
+
+@foreach(var p in Model.Products)
+
+{
+<div class="well">
+    @Html.Partial("_Partialview", p)
+</div>
+}
+<div>
+    @Html.Pagelinks(Model.PgingInfo, X => Url.Action("List", new { page = X,category=Model.CurrentCategory }))
+
+</div>
