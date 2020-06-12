@@ -51,15 +51,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Ilogger.cs" />
     <Compile Include="Abstract\IorderProcessor.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\EFDbcontext.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
+    <Compile Include="Concrete\LogProcessToDB.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Cartline.cs" />
+    <Compile Include="Entities\LogDetails.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ShippingDetails.cs" />
+    <Compile Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCONTEXTFROMDATABASE.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCONTEXTFROMDATABASE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCONTEXTFROMDATABASE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="FromDBCONTEXT\logDetail.cs">
+      <DependentUpon>DBCONTEXTFROMDATABASE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +90,26 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <EntityDeploy Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBCONTEXTFROMDATABASE.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.edmx.diagram">
+      <DependentUpon>DBCONTEXTFROMDATABASE.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBCONTEXTFROMDATABASE.edmx</DependentUpon>
+      <LastGenOutput>DBCONTEXTFROMDATABASE.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FromDBCONTEXT\DBCONTEXTFROMDATABASE.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBCONTEXTFROMDATABASE.edmx</DependentUpon>
+      <LastGenOutput>DBCONTEXTFROMDATABASE.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

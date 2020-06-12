@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BOOKSTOREModelStoreContainer" CdmEntityContainer="BOOKSTOREEntities">
+    <EntitySetMapping Name="logDetails">
+      <EntityTypeMapping TypeName="BOOKSTOREModel.logDetail">
+        <MappingFragment StoreEntitySet="logDetail">
+          <ScalarProperty Name="ActionLogID" ColumnName="ActionLogID" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="AccessDateTime" ColumnName="AccessDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

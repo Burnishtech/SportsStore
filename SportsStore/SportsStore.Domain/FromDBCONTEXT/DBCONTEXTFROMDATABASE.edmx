@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BOOKSTOREModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BOOKSTORE.dbo.logDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="logDetail">
+          <Key>
+            <PropertyRef Name="ActionLogID" />
+          </Key>
+          <Property Name="ActionLogID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActionName" Type="varchar" MaxLength="50" />
+          <Property Name="ControllerName" Type="varchar" MaxLength="50" />
+          <Property Name="AccessDateTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="BOOKSTOREModelStoreContainer">
+          <EntitySet Name="logDetail" EntityType="Self.logDetail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [logDetail].[ActionLogID] AS [ActionLogID], 
+    [logDetail].[ActionName] AS [ActionName], 
+    [logDetail].[ControllerName] AS [ControllerName], 
+    [logDetail].[AccessDateTime] AS [AccessDateTime]
+    FROM [dbo].[logDetail] AS [logDetail]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BOOKSTOREModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="logDetail">
+          <Key>
+            <PropertyRef Name="ActionLogID" />
+          </Key>
+          <Property Name="ActionLogID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ControllerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccessDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="BOOKSTOREEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="logDetails" EntityType="Self.logDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BOOKSTOREModelStoreContainer" CdmEntityContainer="BOOKSTOREEntities">
+          <EntitySetMapping Name="logDetails">
+            <EntityTypeMapping TypeName="BOOKSTOREModel.logDetail">
+              <MappingFragment StoreEntitySet="logDetail">
+                <ScalarProperty Name="ActionLogID" ColumnName="ActionLogID" />
+                <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+                <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+                <ScalarProperty Name="AccessDateTime" ColumnName="AccessDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

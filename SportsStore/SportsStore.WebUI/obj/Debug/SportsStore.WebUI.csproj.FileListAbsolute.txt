@@ -121,3 +121,5 @@ E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\obj\Debug\Sp
 E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.csproj.CopyComplete
 E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.dll
 E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.pdb
+E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\bin\log4net.dll
+E:\MVC SELF STUDY\2018\Project Folder\SportsStore\SportsStore.WebUI\bin\log4net.xml

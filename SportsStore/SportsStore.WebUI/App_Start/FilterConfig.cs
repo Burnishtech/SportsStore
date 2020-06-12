@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using SportsStore.WebUI.Utility;
+using System.Web;
 using System.Web.Mvc;
 
 namespace SportsStore.WebUI
@@ -8,6 +9,7 @@ namespace SportsStore.WebUI
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new CustomErrorHandling());
         }
     }
 }
